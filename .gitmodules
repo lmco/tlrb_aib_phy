@@ -1,0 +1,3 @@
+[submodule "lib/aib-phy-hardware"]
+	path = lib/aib-phy-hardware
+	url = https://github.com/intel/aib-phy-hardware.git
