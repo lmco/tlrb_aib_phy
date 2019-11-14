@@ -1,5 +1,4 @@
 [1]: https://www.intel.com/content/www/us/en/architecture-and-technology/programmable/heterogeneous-integration/overview.html
-[2]: https://github.com/intel/aib-phy-hardware
 
 # tlrb_aib_phy
 
@@ -52,76 +51,13 @@ More information on the AIB and its specification can be found on Intel's websit
 
 ## Cloning
 
-Since this repository uses git submodules, it's recommended to use the --recurse-submodules flag when cloning:
 ```
-git clone --recurse-submodules https://github.com/lmco/tlrb_aib_phy.git
-```
-
-Otherwise the submodules can be pulled in to an already cloned repository by running the following git command:
-```
-git submodule update --init
+git clone https://github.com/lmco/tlrb_aib_phy.git
 ```
 
 ## Dependencies
 
-* [aib-phy-hardware][2]
-
-## Directory Structure
-
-```
-.
-|   LICENSE                                             # License file
-|   README.md                                           # This file
-|       
-+---doc                                                 # Documentation
-|       ITRX_TRLB_AIB_PHY_Specification_0-8.pdf         # Intrinsix's TLRB AIB PHY Specification v0.8
-|       
-+---lib                                                 # Submodules
-|   \---aib-phy-hardware
-|               
-\---rtl                                                 # Source files for TLRB AIB PHY
-    |   tlrb_aib_phy_ext.sv
-    |   
-    +---itrx_aib_phy
-    |       itrx_aib_phy.sv
-    |       itrx_aib_phy_apbs.sv
-    |       itrx_aib_phy_aux_chan.sv
-    |       itrx_aib_phy_bit_sync.v
-    |       itrx_aib_phy_bscan.v
-    |       itrx_aib_phy_bsr.v
-    |       itrx_aib_phy_clk_bc.v
-    |       itrx_aib_phy_consts.vh
-    |       itrx_aib_phy_dll.v
-    |       itrx_aib_phy_ext.sv
-    |       itrx_aib_phy_in_bc.v
-    |       itrx_aib_phy_io_buf.v
-    |       itrx_aib_phy_io_buf_decode.v
-    |       itrx_aib_phy_io_buf_rx.v
-    |       itrx_aib_phy_io_buf_rx_dist.v
-    |       itrx_aib_phy_io_buf_tx.v
-    |       itrx_aib_phy_io_buf_tx_clk.v
-    |       itrx_aib_phy_io_cell.v
-    |       itrx_aib_phy_io_chan.sv
-    |       itrx_aib_phy_io_chan_param2.vh
-    |       itrx_aib_phy_jtag.sv
-    |       itrx_aib_phy_jtag_clkdr.v
-    |       itrx_aib_phy_out_bc.v
-    |       itrx_aib_phy_redn.v
-    |       itrx_aib_phy_redn_3to1_mux.v
-    |       itrx_aib_phy_repair_enc.sv
-    |       itrx_aib_phy_stdcell_clk_mux.v
-    |       itrx_aib_phy_stdcell_dff.v
-    |       itrx_aib_phy_stdcell_dffn.v
-    |       itrx_aib_phy_stdcell_icg.v
-    |       itrx_aib_phy_stdcell_lat.v
-    |       itrx_aib_phy_stdcell_latn.v
-    |       itrx_aib_phy_sync_rstn.v
-    |       pdl.v
-    |       
-    \---itrx_aib_phy_io_buf_ana
-            itrx_aib_phy_io_buf_ana.v
-
-```
+* None
 
 ## Authors
 

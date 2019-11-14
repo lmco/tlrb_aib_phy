@@ -1,0 +1,92 @@
+// Copyright 2019 © Lockheed Martin Corporation
+
+      AIB Legacy (buffx1)           AIB Intrinsix (io_cell)
+      ---------                     -------------
+inout iopad                         ubump
+inout VCORE                         vcc_dig
+inout vccl                          vcc_io
+inout GNDC                          vss_ana
+input anlg_rstb                     irstb              // Legacy: anlg & dig wired together
+input async_dat_in0                 nrml_async_data
+input async_dat_in1                 redn_async_data
+input dig_rstb                      irstb              // Legacy: anlg & dig wired together
+input iclkin_dist_in0               inclk_dist
+input iclkin_dist_in1               N/A                // Legacy NO-CONNECT
+input iclkn                         iclkn
+input idata0_in0                    nrml_idat0
+input idata0_in1                    nrml_idat1
+input idata1_in0                    redn_idat0
+input idata1_in1                    redn_idat1
+input idataselb_in0                 nrml_idat_selb
+input idataselb_in1                 redn_idat_selb
+input iddren_in0                    nrml_iddr_enable
+input iddren_in1                    redn_iddr_enable
+input ilaunch_clk_in0               nrml_ilaunch_clk
+input ilaunch_clk_in1               redn_ilaunch_clk
+input ilpbk_dat_in0                 N/A                // Legacy NO-CONNECT (txdig)
+input ilpbk_dat_in1                 N/A                // Legacy NO-CONNECT
+input ilpbk_en_in0                  N/A                // Legacy NO-CONNECT (txdig)
+input ilpbk_en_in1                  N/A                // Legacy NO-CONNECT
+input indrv_in0[0]                  nrml_indrv[0]
+input indrv_in0[1]                  nrml_indrv[1]
+input indrv_in1[0]                  redn_indrv[0]
+input indrv_in1[1]                  redn_indrv[1]
+input ipdrv_in0[0]                  nrml_ipdrv[0]
+input ipdrv_in0[1]                  nrml_ipdrv[1]
+input ipdrv_in1[0]                  redn_ipdrv[0]
+input ipdrv_in1[1]                  redn_ipdrv[1]
+input irxen_in0[0]                  nrml_rxen[0]
+input irxen_in0[1]                  nrml_rxen[1]
+input irxen_in0[2]                  nrml_rxen[2]
+input irxen_in1[0]                  redn_rxen[0]
+input irxen_in1[1]                  redn_rxen[1]
+input irxen_in1[2]                  redn_rxen[2]
+input istrbclk_in0                  inclk
+input istrbclk_in1                  N/A                // Legacy NO-CONNECT
+input itxen_in0                     nrml_txen
+input itxen_in1                     redn_txen
+input jtag_clkdr_in                 jtag_clkdr
+input jtag_clksel                   jtag_clksel
+input jtag_intest                   jtag_intest
+input jtag_mode_in                  jtag_mode
+input jtag_rstb                     N/A                // common irstb MUX @ level above
+input jtag_rstb_en                  N/A                // common irstb MUX @ level above
+input jtag_tx_scanen_in             jtag_scan_en
+input jtag_tx_scan_in               jtag_scanin
+input last_bs_in                    N/A                // Legacy NO-CONNECT
+input oclkb_in1                     redn_oclk_b
+input oclk_in1                      redn_oclk
+input odat0_in1                     redn_odat0
+input odat1_in1                     redn_odat1
+input odat_async_in1                redn_odat_asyn
+input pd_data_in1                   N/A                // Legacy NO-CONNECT
+input por_aib_vcchssi               por_vcc_dig
+input por_aib_vccl                  por_vcc_io
+input prev_io_shift_en              prev_redn_engage
+input shift_en                      redn_engage
+input test_weakpd                   jtag_weakpdn
+input test_weakpu                   jtag_weakpu
+input N/A                           redn_any           // NEW for Intel AIB Spec
+input N/A                           rx_irstb           // NEW
+input N/A                           tx_irstb           // NEW
+input N/A                           spare_mode         // NEW for Intel AIB Spec
+output async_dat_in1_jtag_out       jtag_async_data    // From bsr_red_wrap
+output idata0_in1_jtag_out          jtag_idat0         // From bsr_red_wrap
+output idata1_in1_jtag_out          jtag_idat1         // From bsr_red_wrap
+output jtag_clkdr_out               N/A                // 1 Chan jtag_clkdr tree
+output jtag_clkdr_outn              N/A                // 1 Chan jtag_clkdr tree
+output jtag_rx_scan_out             jtag_scanout
+output last_bs_out                  N/A                // Legacy NO-CONNECT
+output oclk_aib                     oclk               // From buffx1
+output oclkb_aib                    oclk_b             // From buffx1
+output oclkb_out                    rmux_oclk_b        // From red_custom_dig2 MUX (unused); Legacy NO-CONNECT
+output oclkn                        N/A                // Legacy same as ubump (0 ohm)
+output oclk_out                     rmux_oclk          // From red_custom_dig2 MUX (unused); Legacy NO-CONNECT
+output odat0_aib                    odat0              // From buffx1
+output odat0_out                    nrml_odat0         // From bsr_red_wrap
+output odat1_aib                    odat1              // From buffx1
+output odat1_out                    nrml_odat1         // From bsr_red_wrap
+output odat_async_aib               odat_asyn          // From buffx1
+output odat_async_out               nrml_odat_asyn     // From bsr_red_wrap
+output pd_data_aib                  N/A                // From buffx1 (D input to inclk DFFs)
+output pd_data_out                  N/A                // Legacy NO-CONNECT
